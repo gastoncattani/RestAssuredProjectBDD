@@ -22,7 +22,7 @@ import static io.restassured.RestAssured.given;
 public class StepDefinition extends Utils {
 
     RequestSpecification request;
-    ResponseSpecification resspec;
+    ResponseSpecification resSpec;
     Response response;
     TestDataBuild data = new TestDataBuild();
 
@@ -38,13 +38,12 @@ public class StepDefinition extends Utils {
         // Write code here that turns the phrase above into concrete actions
         APIResources resourceAPI = APIResources.valueOf(resource);
         System.out.println(resourceAPI.getResource());
-        resspec = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
+        resSpec = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
 
         if (httpMethod.equalsIgnoreCase("POST"))
             response = request.when().post(resourceAPI.getResource());
         else if (httpMethod.equalsIgnoreCase("GET"))
             response = request.when().get(resourceAPI.getResource());
-        //.then().spec(resspec).extract().response();
     }
 
     @Then("The API call is success with status code {int}")
