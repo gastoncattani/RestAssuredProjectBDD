@@ -27,4 +27,11 @@ public class TestDataBuild {
 
         return p;
     }
+
+    public String DeletePlacePayload(String placeId) {
+        //return "{\\r\\n    \\\"place_id\\\":\\\"" + placeId + "\\\"\\r\\n}";
+        return "{\n" +
+                "    \"place_id\":\"" + placeId + "\"\n" +
+                "}";
+    }
 }
