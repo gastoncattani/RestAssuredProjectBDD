@@ -3,25 +3,19 @@ package stepdefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.restassured.RestAssured;
-import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
 import io.restassured.specification.ResponseSpecification;
-import pojo.AddPlace;
-import pojo.Location;
+import resources.APIResources;
 import resources.TestDataBuild;
 import resources.Utils;
 
 import static org.junit.Assert.*;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 import static io.restassured.RestAssured.given;
 
@@ -39,19 +33,24 @@ public class StepDefinition extends Utils {
                 .body(data.addPlacePayload(name, language, address));
     }
 
-    @When("User calls {string} with POST http request")
-    public void user_calls_with_post_http_request(String string) {
+    @When("User calls {string} with {string} http request")
+    public void user_calls_with_http_request(String resource, String httpMethod) {
         // Write code here that turns the phrase above into concrete actions
+        APIResources resourceAPI = APIResources.valueOf(resource);
+        System.out.println(resourceAPI.getResource());
         resspec = new ResponseSpecBuilder().expectStatusCode(200).expectContentType(ContentType.JSON).build();
-        response = request.when().post("/maps/api/place/add/json")
-                //.then().assertThat().statusCode(200).extract().response();
-                .then().spec(resspec).extract().response();
+
+        if (httpMethod.equalsIgnoreCase("POST"))
+            response = request.when().post(resourceAPI.getResource());
+        else if (httpMethod.equalsIgnoreCase("GET"))
+            response = request.when().get(resourceAPI.getResource());
+        //.then().spec(resspec).extract().response();
     }
 
     @Then("The API call is success with status code {int}")
-    public void the_api_call_is_success_with_status_code(Integer int1) {
+    public void the_api_call_is_success_with_status_code(Integer statusCode) {
         // Write code here that turns the phrase above into concrete actions
-        assertEquals(response.getStatusCode(), 200);
+        assertEquals(response.getStatusCode(), statusCode.toString());
     }
 
     @Then("{string} in response body is {string}")
