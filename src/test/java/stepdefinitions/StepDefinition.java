@@ -32,11 +32,11 @@ public class StepDefinition extends Utils {
     Response response;
     TestDataBuild data = new TestDataBuild();
 
-    @Given("Add Place Payload")
-    public void add_place_payload() throws IOException {
+    @Given("Add Place Payload with {string} {string} {string}")
+    public void addPlacePayloadWith(String name, String language, String address) throws IOException {
         // Write code here that turns the phrase above into concrete actions
         request = given().spec(requestSpecification()).log().all()
-                .body(data.addPlacePayload());
+                .body(data.addPlacePayload(name, language, address));
     }
 
     @When("User calls {string} with POST http request")

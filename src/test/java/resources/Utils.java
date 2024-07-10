@@ -11,15 +11,16 @@ import java.io.*;
 import java.util.Properties;
 
 public class Utils {
-    RequestSpecification req;
+    public static RequestSpecification req;
 
     public RequestSpecification requestSpecification() throws IOException {
-
-        PrintStream log = new PrintStream(new FileOutputStream("logging.txt"));
-        req = new RequestSpecBuilder().setBaseUri(getGlobalValue("baseUrl"))
-                .addFilter(RequestLoggingFilter.logRequestTo(log)) // Agrega todo lo que hace el request en logging.txt
-                .addFilter(ResponseLoggingFilter.logResponseTo(log)) // Agrega todo lo que hace el response en logging.txt
-                .addQueryParam("key", "qaclick123").setContentType(ContentType.JSON).build();
+        if (req == null) {
+            PrintStream log = new PrintStream(new FileOutputStream("logging.txt"));
+            req = new RequestSpecBuilder().setBaseUri(getGlobalValue("baseUrl"))
+                    .addFilter(RequestLoggingFilter.logRequestTo(log)) // Agrega todo lo que hace el request en logging.txt
+                    .addFilter(ResponseLoggingFilter.logResponseTo(log)) // Agrega todo lo que hace el response en logging.txt
+                    .addQueryParam("key", "qaclick123").setContentType(ContentType.JSON).build();
+        }
 
         return req;
     }
