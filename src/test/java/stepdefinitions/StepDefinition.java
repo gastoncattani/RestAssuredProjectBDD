@@ -25,7 +25,7 @@ public class StepDefinition extends Utils {
     ResponseSpecification resSpec;
     Response response;
     TestDataBuild data = new TestDataBuild();
-    static String place_id;
+    public static String place_id;
 
     @Given("Add Place Payload with {string} {string} {string}")
     public void addPlacePayloadWith(String name, String language, String address) throws IOException {

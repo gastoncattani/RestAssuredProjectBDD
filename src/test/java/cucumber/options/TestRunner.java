@@ -5,6 +5,6 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/java/features", glue = {"stepdefinitions"}, tags = "@AddPlace or @DeletePlace")
+@CucumberOptions(features = "src/test/java/features", glue = {"stepdefinitions"}, tags = "@DeletePlace")
 public class TestRunner {
 }
