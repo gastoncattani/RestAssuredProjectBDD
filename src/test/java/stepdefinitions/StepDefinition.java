@@ -77,4 +77,9 @@ public class StepDefinition extends Utils {
     public void deleteplacePayload() throws IOException {
         request = given().spec(requestSpecification()).body(data.DeletePlacePayload(place_id));
     }
+
+    @And("PlaceId is removed")
+    public void placeidIsRemoved() {
+        place_id = "";
+    }
 }
