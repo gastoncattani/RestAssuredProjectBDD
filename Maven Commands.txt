@@ -1,0 +1,21 @@
+All of them are phases
+* compile
+* test
+* verify
+
+Compile -> Test -> Verify
+
+To compile a project
+mvn compile
+
+To execute the test in console line with maven
+mvn test
+
+To use tags and execute just one specific tag in maven (the -D is to pass parameters)
+mvn test -D cucumber.filter.tags="@AddPlace"
+
+Is executed after all the tests ran
+mvn test verify
+
+Cucumber Reporting
+https://github.com/damianszczepanik/maven-cucumber-reporting

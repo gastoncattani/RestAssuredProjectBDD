@@ -12,11 +12,11 @@ Multiparts:		<none>
 Body:
 {
     "accuracy": 50,
-    "name": "Noelia",
+    "name": "Gian",
     "phone_number": "+5491111111111",
-    "address": "Argentina",
+    "address": "Address 1",
     "webSite": "www.google.com",
-    "languague": "Italian",
+    "languague": "English",
     "location": {
         "lat": 2.3,
         "lng": -3.2
@@ -27,7 +27,7 @@ Body:
     ]
 }
 HTTP/1.1 200 OK
-Date: Thu, 11 Jul 2024 18:23:31 GMT
+Date: Thu, 11 Jul 2024 19:29:10 GMT
 Server: Apache/2.4.52 (Ubuntu)
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST
@@ -40,17 +40,17 @@ Content-Type: application/json;charset=UTF-8
 
 {
     "status": "OK",
-    "place_id": "ea42bbe248c99a5623c46cd2c2af97f9",
+    "place_id": "599f6b71a406efc79013b14e142403ec",
     "scope": "APP",
-    "reference": "811e3343356b483c6d74df16c045bb3e811e3343356b483c6d74df16c045bb3e",
-    "id": "811e3343356b483c6d74df16c045bb3e"
+    "reference": "dab09e71a63dcacc1a864b8101679b2adab09e71a63dcacc1a864b8101679b2a",
+    "id": "dab09e71a63dcacc1a864b8101679b2a"
 }
 Request method:	GET
-Request URI:	https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=ea42bbe248c99a5623c46cd2c2af97f9
+Request URI:	https://rahulshettyacademy.com/maps/api/place/get/json?key=qaclick123&place_id=599f6b71a406efc79013b14e142403ec
 Proxy:			<none>
 Request params:	<none>
 Query params:	key=qaclick123
-				place_id=ea42bbe248c99a5623c46cd2c2af97f9
+				place_id=599f6b71a406efc79013b14e142403ec
 Form params:	<none>
 Path params:	<none>
 Headers:		Accept=*/*
@@ -59,13 +59,13 @@ Cookies:		<none>
 Multiparts:		<none>
 Body:			<none>
 HTTP/1.1 200 OK
-Date: Thu, 11 Jul 2024 18:23:33 GMT
+Date: Thu, 11 Jul 2024 19:29:12 GMT
 Server: Apache/2.4.52 (Ubuntu)
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST
 Access-Control-Max-Age: 3600
 Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With
-Content-Length: 188
+Content-Length: 186
 Keep-Alive: timeout=5, max=100
 Connection: Keep-Alive
 Content-Type: application/json;charset=UTF-8
@@ -76,9 +76,9 @@ Content-Type: application/json;charset=UTF-8
         "longitude": "-3.2"
     },
     "accuracy": "50",
-    "name": "Noelia",
+    "name": "Gian",
     "phone_number": "+5491111111111",
-    "address": "Argentina",
+    "address": "Address 1",
     "types": "Shoe Park,Shop",
     "website": "",
     "language": ""
@@ -96,10 +96,10 @@ Cookies:		<none>
 Multiparts:		<none>
 Body:
 {
-    "place_id": "ea42bbe248c99a5623c46cd2c2af97f9"
+    "place_id": "599f6b71a406efc79013b14e142403ec"
 }
 HTTP/1.1 200 OK
-Date: Thu, 11 Jul 2024 18:23:35 GMT
+Date: Thu, 11 Jul 2024 19:29:14 GMT
 Server: Apache/2.4.52 (Ubuntu)
 Access-Control-Allow-Origin: *
 Access-Control-Allow-Methods: POST
