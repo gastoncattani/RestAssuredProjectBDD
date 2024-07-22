@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('Run cucumber test'){
             steps{
-                sh 'mvn test -D cucumber.filter.tags="@AddPlace"'
+                bat 'mvn clean test"'
             }
         }
     }
