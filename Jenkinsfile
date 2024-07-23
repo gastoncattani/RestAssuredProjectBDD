@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('Run cucumber test'){
             steps{
-                bat 'mvn clean test"'
+                sh "mvn clean test"
             }
         }
     }
